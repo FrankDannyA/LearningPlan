@@ -13,6 +13,7 @@
 		E54305B627B24AC000443353 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E54305B427B24AC000443353 /* Main.storyboard */; };
 		E54305B827B24AC400443353 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E54305B727B24AC400443353 /* Assets.xcassets */; };
 		E54305BB27B24AC400443353 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E54305B927B24AC400443353 /* LaunchScreen.storyboard */; };
+		E54305C327B24CE100443353 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54305C227B24CE100443353 /* LessonViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		E54305B727B24AC400443353 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E54305BA27B24AC400443353 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E54305BC27B24AC400443353 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E54305C227B24CE100443353 /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				E54305AE27B24AC000443353 /* AppDelegate.swift */,
 				E54305B027B24AC000443353 /* SceneDelegate.swift */,
 				E54305B227B24AC000443353 /* ViewController.swift */,
+				E54305C227B24CE100443353 /* LessonViewController.swift */,
 				E54305B427B24AC000443353 /* Main.storyboard */,
 				E54305B727B24AC400443353 /* Assets.xcassets */,
 				E54305B927B24AC400443353 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E54305C327B24CE100443353 /* LessonViewController.swift in Sources */,
 				E54305B327B24AC000443353 /* ViewController.swift in Sources */,
 				E54305AF27B24AC000443353 /* AppDelegate.swift in Sources */,
 				E54305B127B24AC000443353 /* SceneDelegate.swift in Sources */,
