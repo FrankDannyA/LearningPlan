@@ -10,24 +10,27 @@ import UIKit
 class LessonViewController: UIViewController {
     
     let learningPlan = LearningPlan(learningYear: "2021-2022")
+    
     var lectioTearm: [Tearm] = []
     var seminarTearm: [Tearm] = []
     var labTearm: [Tearm] = []
     
-    
-    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var labelForTitleLearningYear: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
         tearmInit()
-
         
         labelForTitleLearningYear.text = "ИНДИВИДУАЛЬНЫЙ УЧЕБНЫЙ ПЛАН НА \(learningPlan.learningYear) УЧ. ГОД"
     }
     
+    
     private func tearmInit(){
+     
+        
         let lectioElctrochemistry = Tearm(nameOfTheDiscipline: Classes.electrochemistry,
                       academycHours: [TimeForClasses.electrochemistry_F: 10,
                                       TimeForClasses.electrochemistry_P: 30])
@@ -53,6 +56,7 @@ class LessonViewController: UIViewController {
         seminarTearm.append(seminarElctrochemistry)
         seminarTearm.append(seminarLanguageC1)
         seminarTearm.append(seminarFundamentalsOfChemicalAnalysis)
+        
         
         let labElctrochemistry = Tearm(nameOfTheDiscipline: Classes.electrochemistry,
                                        academycHours: [TimeForClasses.electrochemistry_F: 10,

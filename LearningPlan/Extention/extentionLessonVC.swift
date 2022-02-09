@@ -13,6 +13,8 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView,
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         cell.layer.borderColor = CGColor(red: 0.783922, green: 0.780392, blue: 0.8, alpha: 1.0)
         cell.layer.borderWidth = CGFloat(0.3)

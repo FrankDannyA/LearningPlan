@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct JSON: Codable {
+struct ModelJSON: Decodable {
     let iupSid, title, documentURL, academicYearID: String
     let academicYear: String
     let semesters: [Semester]
@@ -23,7 +23,7 @@ struct JSON: Codable {
 }
 
 // MARK: - Semester
-struct Semester: Codable {
+struct Semester: Decodable {
     let number: String
     let disciplines: [Discipline]
     
@@ -34,7 +34,7 @@ struct Semester: Codable {
 }
 
 // MARK: - Discipline
-struct Discipline: Codable {
+struct Discipline: Decodable {
     let disciplineID: String
     let disciplineName: DisciplineName
     let lesson: [Lesson]
@@ -47,12 +47,12 @@ struct Discipline: Codable {
 }
 
 // MARK: - DisciplineName
-struct DisciplineName: Codable {
+struct DisciplineName: Decodable {
     let nameKk, nameRu, nameEn: String
 }
 
 // MARK: - Lesson
-struct Lesson: Codable {
+struct Lesson: Decodable {
     let lessonTypeID, hours, realHours: String
     
     enum CodingKeys: String, CodingKey {

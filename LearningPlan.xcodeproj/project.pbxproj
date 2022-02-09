@@ -96,6 +96,7 @@
 			children = (
 				E54305B227B24AC000443353 /* ViewController.swift */,
 				E54305C227B24CE100443353 /* LessonViewController.swift */,
+				E54305D027B39D5500443353 /* CollectionViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -114,7 +115,6 @@
 			children = (
 				E54305B427B24AC000443353 /* Main.storyboard */,
 				E54305B927B24AC400443353 /* LaunchScreen.storyboard */,
-				E54305D027B39D5500443353 /* CollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
