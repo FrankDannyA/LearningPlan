@@ -81,10 +81,9 @@
                                     <constraint firstAttribute="height" constant="120" id="tf2-A2-vUh"/>
                                 </constraints>
                             </view>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hx9-QP-V0b">
-                                <rect key="frame" x="54" y="234" width="212" height="284"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Hx9-QP-V0b">
+                                <rect key="frame" x="0.0" y="164" width="320" height="404"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="8xr-9b-Xvc">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -93,7 +92,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="9t4-bK-taj">
-                                        <rect key="frame" x="42" y="0.0" width="128" height="128"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gCr-xe-IwU">
                                             <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -107,8 +106,12 @@
                         <color key="backgroundColor" red="0.94906812910000005" green="0.948990047" blue="0.96947699789999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="RAg-Pu-0Sm" firstAttribute="leading" secondItem="2qb-da-0lk" secondAttribute="leading" id="DzC-yk-Wrj"/>
+                            <constraint firstItem="Hx9-QP-V0b" firstAttribute="top" secondItem="RAg-Pu-0Sm" secondAttribute="bottom" id="KfO-1l-AYy"/>
                             <constraint firstItem="RAg-Pu-0Sm" firstAttribute="trailing" secondItem="2qb-da-0lk" secondAttribute="trailing" id="LYp-GW-q3l"/>
                             <constraint firstItem="RAg-Pu-0Sm" firstAttribute="top" secondItem="2qb-da-0lk" secondAttribute="top" id="LoA-tk-6cv"/>
+                            <constraint firstItem="Hx9-QP-V0b" firstAttribute="trailing" secondItem="2qb-da-0lk" secondAttribute="trailing" id="ZHf-8v-6Nu"/>
+                            <constraint firstItem="Hx9-QP-V0b" firstAttribute="leading" secondItem="2qb-da-0lk" secondAttribute="leading" id="gSU-Br-Uvd"/>
+                            <constraint firstItem="Hx9-QP-V0b" firstAttribute="bottom" secondItem="2qb-da-0lk" secondAttribute="bottom" id="hmm-va-lgH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Индивидуальный учебный план" id="krf-s5-ib4">
@@ -151,6 +154,9 @@
     </scenes>
     <resources>
         <image name="doc" catalog="system" width="115" height="128"/>
+        <systemColor name="secondarySystemBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="secondarySystemGroupedBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

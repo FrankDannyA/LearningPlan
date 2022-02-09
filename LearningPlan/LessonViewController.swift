@@ -8,14 +8,18 @@
 import UIKit
 
 class LessonViewController: UIViewController {
-
+    var frameCollectionView: CGRect!
     
-    @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet var collectionView: UICollectionView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let frame = self.collectionView.frame
+        frameCollectionView = frame
+        print(frame)
         setupCollectionView()
     }
     
@@ -30,76 +34,8 @@ class LessonViewController: UIViewController {
         
         }
     
-    func createLayout() -> UICollectionViewLayout {
-           let layout = UICollectionViewCompositionalLayout {
-               (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-               
-               //Элемент справа
-               let trailingItem = NSCollectionLayoutItem(
-                layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                      heightDimension: .fractionalHeight(0.3)))
-               //Отступ
-               //trailingItem.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-               
-               //Элементы слева
-               let leadingItem = NSCollectionLayoutItem(
-                   layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                      heightDimension: .fractionalHeight(0.3)))
-               //Отступ
-              // leadingItem.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-               
-               //группировка слева
-               let leadingGroup = NSCollectionLayoutGroup.vertical(
-                   layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3),
-                                                      heightDimension: .fractionalHeight(1.0)),
-                   subitem: leadingItem, count: 4)
-               
-               //группировка справа
-               let trailingGroup = NSCollectionLayoutGroup.vertical(
-                layoutSize:NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3),
-                                                  heightDimension: .fractionalHeight(1.0)) ,
-                subitem: trailingItem, count: 12)
-               
-               //элемент вверху
-               let topItem = NSCollectionLayoutItem(
-                   layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                  heightDimension: .fractionalHeight(0.3)))
-               //topItem.contentInsets = NSDirectionalEdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10)
-               
-               let topNestedGroup = NSCollectionLayoutGroup.vertical(
-                layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                   heightDimension: .fractionalHeight(0.4)),
-                subitem: topItem, count: 2)
-               
-               //группировка большого блока внизу
-               let bottomNestedGroup = NSCollectionLayoutGroup.horizontal(
-                   layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                      heightDimension: .fractionalHeight(0.6)),
-                   subitems: [ leadingGroup,  trailingGroup])
-
-
-               let nestedGroup = NSCollectionLayoutGroup.vertical(
-                   layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                      heightDimension: .fractionalHeight(0.4)),
-                   subitems: [topNestedGroup, bottomNestedGroup])
-               
-               
-               let section = NSCollectionLayoutSection(group: nestedGroup)
-               
-               return section
-
-           }
-        
-        
-           return layout
-       }
-    
-    
-    
-}
-    
 func createLayoutFinal() -> UICollectionViewLayout{
-    
+
     let layout = UICollectionViewCompositionalLayout{
         (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
         
@@ -113,7 +49,7 @@ func createLayoutFinal() -> UICollectionViewLayout{
             heightDimension: .fractionalHeight(0.4)))
         
         let topGroup = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
+            widthDimension: .fractionalHeight(1.0),
             heightDimension: .fractionalHeight(0.3)), subitems: [topItemForButton, topItemForTextDescription])
         
         //Нижняя первая группа с названиями
@@ -130,7 +66,7 @@ func createLayoutFinal() -> UICollectionViewLayout{
             heightDimension: .fractionalHeight(0.80)), subitem: firstItemWidthNaming, count: 3)
         
         let firstNamesGroup = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.27),
+            widthDimension: .fractionalWidth(0.4),
             heightDimension: .fractionalHeight(1.0)), subitems: [firstItemForNaming, firstGroupWidhNaming])
         
         //Нижняя вторая группа с лекциями
@@ -151,19 +87,16 @@ func createLayoutFinal() -> UICollectionViewLayout{
             heightDimension: .fractionalHeight(1.0)), subitems: [secondItemForLecture, secondGroupWithLecture])
         
         let groupWithContent = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.73),
+            widthDimension: .fractionalWidth(0.6),
             heightDimension: .fractionalHeight(1.0)), subitem: secondLecturesGroup, count: 3)
         
-
-        
-        
         let bottomGroup = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
+            widthDimension: .fractionalHeight(1.0),
             heightDimension: .fractionalHeight(0.7)), subitems: [firstNamesGroup, groupWithContent])
         //bottomGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0)
         
         let nestedGroup = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(
-            widthDimension: .fractionalHeight(1.0),
+            widthDimension: .absolute(self.collectionView.frame.width),
             heightDimension: .fractionalWidth(1.0)), subitems: [topGroup, bottomGroup])
         
         let section = NSCollectionLayoutSection(group: nestedGroup)
@@ -173,6 +106,8 @@ func createLayoutFinal() -> UICollectionViewLayout{
   
     
     return layout
+}
+    
 }
 
 //MARK: -  UICollectionViewDelegate, UICollectionViewDataSource
