@@ -8,35 +8,23 @@
 import UIKit
 
 class LessonViewController: UIViewController {
-    var frameCollectionView: CGRect!
-    
     
     @IBOutlet var collectionView: UICollectionView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let frame = self.collectionView.frame
-        frameCollectionView = frame
-        print(frame)
         setupCollectionView()
     }
     
-    func setupCollectionView(){
+    
+    private func setupCollectionView(){
         collectionView.delegate = self
         collectionView.dataSource = self
-        //collectionView.isScrollEnabled = false
-        collectionView.collectionViewLayout = createLayoutFinal()
-        //collectionView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height)
-        
-        
-        
-        }
+        collectionView.collectionViewLayout = createLayout()
+    }
     
-func createLayoutFinal() -> UICollectionViewLayout{
-
-    let layout = UICollectionViewCompositionalLayout{
+    private func createLayout() -> UICollectionViewLayout{
+        let layout = UICollectionViewCompositionalLayout{
         (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
         
         //Верхние полосы
@@ -93,7 +81,7 @@ func createLayoutFinal() -> UICollectionViewLayout{
         let bottomGroup = NSCollectionLayoutGroup.horizontal(layoutSize: NSCollectionLayoutSize(
             widthDimension: .fractionalHeight(1.0),
             heightDimension: .fractionalHeight(0.7)), subitems: [firstNamesGroup, groupWithContent])
-        //bottomGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0)
+            bottomGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0)
         
         let nestedGroup = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(
             widthDimension: .absolute(self.collectionView.frame.width),
@@ -102,31 +90,8 @@ func createLayoutFinal() -> UICollectionViewLayout{
         let section = NSCollectionLayoutSection(group: nestedGroup)
         return section
     }
-    
-  
-    
     return layout
 }
     
 }
 
-//MARK: -  UICollectionViewDelegate, UICollectionViewDataSource
-extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { 18 } //18
-
-func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
-    cell.backgroundColor = .black //.secondarySystemBackground
-    cell.layer.borderColor = CGColor(red: 0.95,
-                                     green: 0.95,
-                                     blue: 0.97,
-                                     alpha: 1.0) //.secondarySystemBackground
-    cell.layer.borderWidth = CGFloat(0.3)
-
-    return cell
-    }
-    
-    
-
-
-}
