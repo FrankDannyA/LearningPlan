@@ -10,7 +10,9 @@ import UIKit
 class LessonViewController: UIViewController {
     
     let learningPlan = LearningPlan(learningYear: "2021-2022")
-    var lectioTearm5: [Tearm] = []
+    var lectioTearm: [Tearm] = []
+    var seminarTearm: [Tearm] = []
+    var labTearm: [Tearm] = []
     
     
     @IBOutlet var collectionView: UICollectionView!
@@ -35,11 +37,35 @@ class LessonViewController: UIViewController {
         let lectioFundamentalsOfChemicalAnalysis = Tearm(nameOfTheDiscipline: Classes.fundamentalsOfChemicalAnalysis,
                                                            academycHours: [TimeForClasses.fundamentalsOfChemicalAnalysis_F : 10,
                                                                            TimeForClasses.fundamentalsOfChemicalAnalysis_P : 30])
+        lectioTearm.append(lectioElctrochemistry)
+        lectioTearm.append(lectioLanguageC1)
+        lectioTearm.append(lectioFundamentalsOfChemicalAnalysis)
         
-        lectioTearm5.append(lectioElctrochemistry)
-        lectioTearm5.append(lectioLanguageC1)
-        lectioTearm5.append(lectioFundamentalsOfChemicalAnalysis)
-     
+        let seminarElctrochemistry = Tearm(nameOfTheDiscipline: Classes.electrochemistry,
+                            academycHours: [TimeForClasses.electrochemistry_F: 5,
+                                            TimeForClasses.electrochemistry_P: 15])
+        let seminarLanguageC1 = Tearm(nameOfTheDiscipline: Classes.languageC1,
+                                      academycHours: [TimeForClasses.languageC1_F: 15,
+                                                      TimeForClasses.languageC1_P: 15])
+        let seminarFundamentalsOfChemicalAnalysis = Tearm(nameOfTheDiscipline: Classes.fundamentalsOfChemicalAnalysis,
+                                                          academycHours: [TimeForClasses.fundamentalsOfChemicalAnalysis_F : 0,
+                                                                          TimeForClasses.fundamentalsOfChemicalAnalysis_P : 0])
+        seminarTearm.append(seminarElctrochemistry)
+        seminarTearm.append(seminarLanguageC1)
+        seminarTearm.append(seminarFundamentalsOfChemicalAnalysis)
+        
+        let labElctrochemistry = Tearm(nameOfTheDiscipline: Classes.electrochemistry,
+                                       academycHours: [TimeForClasses.electrochemistry_F: 10,
+                                                       TimeForClasses.electrochemistry_P: 30])
+        let labLanguageC1 = Tearm(nameOfTheDiscipline: Classes.languageC1,
+                                  academycHours: [TimeForClasses.languageC1_F: 10,
+                                                  TimeForClasses.languageC1_P: 30])
+        let labFundamentalsOfChemicalAnalysis = Tearm(nameOfTheDiscipline: Classes.fundamentalsOfChemicalAnalysis,
+                                                      academycHours: [TimeForClasses.fundamentalsOfChemicalAnalysis_F : 10,
+                                                                      TimeForClasses.fundamentalsOfChemicalAnalysis_P : 30])
+        labTearm.append(labElctrochemistry)
+        labTearm.append(labLanguageC1)
+        labTearm.append(labFundamentalsOfChemicalAnalysis)
     }
     
     

@@ -38,19 +38,19 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                            textAlignment: .left)
         case 3:
             cell.textInCellStackView.isHidden = false
-            cell.configure(text: lectioTearm5[0].nameOfTheDiscipline.rawValue,
+            cell.configure(text: lectioTearm[0].nameOfTheDiscipline.rawValue,
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .left)
         case 4:
             cell.textInCellStackView.isHidden = false
-            cell.configure(text: lectioTearm5[1].nameOfTheDiscipline.rawValue,
+            cell.configure(text: lectioTearm[1].nameOfTheDiscipline.rawValue,
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .left)
         case 5:
             cell.textInCellStackView.isHidden = false
-            cell.configure(text: lectioTearm5[2].nameOfTheDiscipline.rawValue,
+            cell.configure(text: lectioTearm[2].nameOfTheDiscipline.rawValue,
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .left)
@@ -64,25 +64,30 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
         case 7:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
-            cell.configure(text: "10/30",
+            cell.configure(text: "",
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
-//            cell.labelForTextInCell.attributedText = factialHours(f: <#T##Int#>)
+            cell.resultInStringAtColor(f: lectioTearm[0].academycHours[TimeForClasses.electrochemistry_F] ?? 0,
+                                       p: lectioTearm[0].academycHours[TimeForClasses.electrochemistry_P] ?? 0)
         case 8:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
-            cell.configure(text: "30/30",
+            cell.configure(text: "",
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
+            cell.resultInStringAtColor(f: lectioTearm[1].academycHours[TimeForClasses.languageC1_F] ?? 0,
+                                       p: lectioTearm[1].academycHours[TimeForClasses.languageC1_P] ?? 0)
         case 9:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
-            cell.configure(text: "10/30",
+            cell.configure(text: "",
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
+            cell.resultInStringAtColor(f: lectioTearm[2].academycHours[TimeForClasses.fundamentalsOfChemicalAnalysis_F] ?? 0,
+                                       p: lectioTearm[2].academycHours[TimeForClasses.fundamentalsOfChemicalAnalysis_P] ?? 0)
         case 10:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
@@ -93,18 +98,21 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
         case 11:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
-            cell.configure(text: "5/15",
+            cell.configure(text: "",
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
+            cell.resultInStringAtColor(f: seminarTearm[0].academycHours[TimeForClasses.electrochemistry_F] ?? 0,
+                                       p: seminarTearm[0].academycHours[TimeForClasses.electrochemistry_P] ?? 0)
         case 12:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
-            cell.configure(text: "15/15",
+            cell.configure(text: "",
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
-            cell.resultInStringAtColor(f: 15, p: 15)
+            cell.resultInStringAtColor(f: seminarTearm[1].academycHours[TimeForClasses.languageC1_F] ?? 0,
+                                       p: seminarTearm[1].academycHours[TimeForClasses.languageC1_P] ?? 0)
         case 13:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
@@ -112,7 +120,8 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
-            cell.resultInStringAtColor(f: 10, p: 30)
+            cell.resultInStringAtColor(f: seminarTearm[2].academycHours[TimeForClasses.fundamentalsOfChemicalAnalysis_F] ?? 0,
+                                       p: seminarTearm[2].academycHours[TimeForClasses.fundamentalsOfChemicalAnalysis_P] ?? 0)
         case 14:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
@@ -123,24 +132,30 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
         case 15:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
-            cell.configure(text: "10/30",
+            cell.configure(text: "",
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
+            cell.resultInStringAtColor(f: labTearm[0].academycHours[TimeForClasses.electrochemistry_F] ?? 0,
+                                       p: labTearm[0].academycHours[TimeForClasses.electrochemistry_P] ?? 0)
         case 16:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
-            cell.configure(text: "10/30",
+            cell.configure(text: "",
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
+            cell.resultInStringAtColor(f: labTearm[1].academycHours[TimeForClasses.languageC1_F] ?? 0,
+                                       p: labTearm[1].academycHours[TimeForClasses.languageC1_P] ?? 0)
         case 17:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
-            cell.configure(text: "10/30",
+            cell.configure(text: "",
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
+            cell.resultInStringAtColor(f: labTearm[2].academycHours[TimeForClasses.fundamentalsOfChemicalAnalysis_F] ?? 0,
+                                       p: labTearm[2].academycHours[TimeForClasses.fundamentalsOfChemicalAnalysis_P] ?? 0)
         default:
             cell.backgroundColor = .black
         }

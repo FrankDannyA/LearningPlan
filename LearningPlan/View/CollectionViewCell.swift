@@ -36,12 +36,14 @@ class CollectionViewCell: UICollectionViewCell {
     func resultInStringAtColor(f value1: Int, p value2: Int) {
         let value1AtString = String(value1)
         let value2AtString = String(value2)
-        if value1 < value2 {
+        if value1 == 0 && value2 == 0 {
+            labelForTextInCell.text = ""
+        } else if value1 < value2 {
             let string = NSMutableAttributedString(string: "\(value1AtString) / \(value2AtString)")
-            string.setColor(color: UIColor.red, forText: value1AtString)
-            string.setColor(color: UIColor.green, forText: value2AtString)
+            string.setColor(color: UIColor.red, forText: value2AtString)
+            string.setColor(color: UIColor.green, forText: value1AtString)
             labelForTextInCell.attributedText = string
-        } else {
+        } else if value1 >= value2{
             let string = NSMutableAttributedString(string: "\(value1AtString) / \(value2AtString)")
             string.setColor(color: UIColor.green, forText: "\(value1AtString) / \(value2AtString)")
             string.setColor(color: UIColor.black, forText: "/")
