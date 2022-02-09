@@ -22,7 +22,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Посмотреть план"/>
                                 <connections>
-                                    <segue destination="lQ4-bf-bRR" kind="show" id="hP0-D6-CUH"/>
+                                    <action selector="lookAtPlan" destination="BYZ-38-t0r" eventType="touchUpInside" id="uHF-Po-NFw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -34,6 +34,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QAO-E6-dKo"/>
+                    <connections>
+                        <segue destination="lQ4-bf-bRR" kind="show" identifier="goToPersonalLerningPlan" id="lY2-eC-WLE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -108,6 +111,9 @@
                                                             <buttonConfiguration key="configuration" style="plain" title="Семестр 5">
                                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                                             </buttonConfiguration>
+                                                            <connections>
+                                                                <action selector="pressTerm5" destination="9t4-bK-taj" eventType="touchUpInside" id="pcr-4f-mWv"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ou-yU-U7w">
                                                             <rect key="frame" x="74" y="0.0" width="74" height="66"/>
@@ -115,6 +121,9 @@
                                                             <buttonConfiguration key="configuration" style="plain" title="Семестр 6">
                                                                 <color key="baseForegroundColor" systemColor="labelColor"/>
                                                             </buttonConfiguration>
+                                                            <connections>
+                                                                <action selector="pressTerm6" destination="9t4-bK-taj" eventType="touchUpInside" id="aBN-SH-Mba"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>
@@ -142,7 +151,9 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="148" height="66"/>
                                         <connections>
-                                            <outlet property="labelForText" destination="uii-Aw-UbH" id="yar-RT-nMg"/>
+                                            <outlet property="buttonForTerm5" destination="Xeg-iG-1vH" id="KkT-pX-oDw"/>
+                                            <outlet property="buttonForTerm6" destination="3Ou-yU-U7w" id="D4c-Al-rpn"/>
+                                            <outlet property="labelForTextInCell" destination="uii-Aw-UbH" id="KwH-MX-aqj"/>
                                             <outlet property="termStackView" destination="13K-lf-rv6" id="fNA-6O-46R"/>
                                             <outlet property="textInCellStackView" destination="Jjd-hD-182" id="mth-Wh-hdH"/>
                                         </connections>
@@ -169,6 +180,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Hx9-QP-V0b" id="Kd1-LB-EeF"/>
+                        <outlet property="labelForTitleLearningYear" destination="hce-v2-80P" id="yAM-Lk-6aD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smd-pu-cTW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

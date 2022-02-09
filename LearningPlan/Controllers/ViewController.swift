@@ -7,5 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {}
+class ViewController: UIViewController {
+    @IBAction func lookAtPlan() {
+        performSegue(withIdentifier: "goToPersonalLerningPlan", sender: nil)
+    }
+}
 

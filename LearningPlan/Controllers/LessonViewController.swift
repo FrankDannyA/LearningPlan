@@ -9,11 +9,37 @@ import UIKit
 
 class LessonViewController: UIViewController {
     
-    @IBOutlet var collectionView: UICollectionView!
+    let learningPlan = LearningPlan(learningYear: "2021-2022")
+    var lectioTearm5: [Tearm] = []
     
+    
+    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet weak var labelForTitleLearningYear: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        tearmInit()
+
+        
+        labelForTitleLearningYear.text = "ИНДИВИДУАЛЬНЫЙ УЧЕБНЫЙ ПЛАН НА \(learningPlan.learningYear) УЧ. ГОД"
+    }
+    
+    private func tearmInit(){
+        let lectioElctrochemistry = Tearm(nameOfTheDiscipline: Classes.electrochemistry,
+                      academycHours: [TimeForClasses.electrochemistry_F: 10,
+                                      TimeForClasses.electrochemistry_P: 30])
+        let lectioLanguageC1 = Tearm(nameOfTheDiscipline: Classes.languageC1,
+                                    academycHours: [TimeForClasses.languageC1_F: 30,
+                                                    TimeForClasses.languageC1_P: 30])
+        let lectioFundamentalsOfChemicalAnalysis = Tearm(nameOfTheDiscipline: Classes.fundamentalsOfChemicalAnalysis,
+                                                           academycHours: [TimeForClasses.fundamentalsOfChemicalAnalysis_F : 10,
+                                                                           TimeForClasses.fundamentalsOfChemicalAnalysis_P : 30])
+        
+        lectioTearm5.append(lectioElctrochemistry)
+        lectioTearm5.append(lectioLanguageC1)
+        lectioTearm5.append(lectioFundamentalsOfChemicalAnalysis)
+     
     }
     
     
@@ -22,7 +48,7 @@ class LessonViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.collectionViewLayout = createLayout()
     }
-    
+
     private func createLayout() -> UICollectionViewLayout{
         let layout = UICollectionViewCompositionalLayout{
         (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in

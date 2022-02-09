@@ -16,8 +16,10 @@
 		E54305C327B24CE100443353 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54305C227B24CE100443353 /* LessonViewController.swift */; };
 		E54305CA27B39C0900443353 /* extentionLessonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54305C927B39C0900443353 /* extentionLessonVC.swift */; };
 		E54305D127B39D5500443353 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54305D027B39D5500443353 /* CollectionViewCell.swift */; };
-		E54305D427B3DA3200443353 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54305D327B3DA3200443353 /* Model.swift */; };
+		E54305D427B3DA3200443353 /* ModelJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54305D327B3DA3200443353 /* ModelJSON.swift */; };
 		E54305D627B3E15B00443353 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54305D527B3E15B00443353 /* Task.swift */; };
+		E54305D927B3E77600443353 /* ModelForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54305D827B3E77600443353 /* ModelForView.swift */; };
+		E54305DB27B4131900443353 /* extentionNSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = E54305DA27B4131900443353 /* extentionNSMutableAttributedString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +34,10 @@
 		E54305C227B24CE100443353 /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
 		E54305C927B39C0900443353 /* extentionLessonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extentionLessonVC.swift; sourceTree = "<group>"; };
 		E54305D027B39D5500443353 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
-		E54305D327B3DA3200443353 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		E54305D327B3DA3200443353 /* ModelJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelJSON.swift; sourceTree = "<group>"; };
 		E54305D527B3E15B00443353 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		E54305D827B3E77600443353 /* ModelForView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelForView.swift; sourceTree = "<group>"; };
+		E54305DA27B4131900443353 /* extentionNSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extentionNSMutableAttributedString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				E54305C927B39C0900443353 /* extentionLessonVC.swift */,
+				E54305DA27B4131900443353 /* extentionNSMutableAttributedString.swift */,
 			);
 			path = Extention;
 			sourceTree = "<group>";
@@ -117,7 +122,8 @@
 		E54305CF27B39D2800443353 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				E54305D327B3DA3200443353 /* Model.swift */,
+				E54305D327B3DA3200443353 /* ModelJSON.swift */,
+				E54305D827B3E77600443353 /* ModelForView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,12 +208,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				E54305D627B3E15B00443353 /* Task.swift in Sources */,
-				E54305D427B3DA3200443353 /* Model.swift in Sources */,
+				E54305DB27B4131900443353 /* extentionNSMutableAttributedString.swift in Sources */,
+				E54305D427B3DA3200443353 /* ModelJSON.swift in Sources */,
 				E54305C327B24CE100443353 /* LessonViewController.swift in Sources */,
 				E54305B327B24AC000443353 /* ViewController.swift in Sources */,
 				E54305D127B39D5500443353 /* CollectionViewCell.swift in Sources */,
 				E54305AF27B24AC000443353 /* AppDelegate.swift in Sources */,
 				E54305B127B24AC000443353 /* SceneDelegate.swift in Sources */,
+				E54305D927B3E77600443353 /* ModelForView.swift in Sources */,
 				E54305CA27B39C0900443353 /* extentionLessonVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

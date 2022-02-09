@@ -8,9 +8,11 @@
 import UIKit
 
 extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { 18 } //18
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView,
+                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
         cell.layer.borderColor = CGColor(red: 0.783922, green: 0.780392, blue: 0.8, alpha: 1.0)
         cell.layer.borderWidth = CGFloat(0.3)
@@ -36,19 +38,19 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                            textAlignment: .left)
         case 3:
             cell.textInCellStackView.isHidden = false
-            cell.configure(text: "Электрохимия \n(на англ. яз)",
+            cell.configure(text: lectioTearm5[0].nameOfTheDiscipline.rawValue,
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .left)
         case 4:
             cell.textInCellStackView.isHidden = false
-            cell.configure(text: "Иностранный язык С1",
+            cell.configure(text: lectioTearm5[1].nameOfTheDiscipline.rawValue,
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .left)
         case 5:
             cell.textInCellStackView.isHidden = false
-            cell.configure(text: "Основы химического анализа",
+            cell.configure(text: lectioTearm5[2].nameOfTheDiscipline.rawValue,
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .left)
@@ -66,6 +68,7 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
+//            cell.labelForTextInCell.attributedText = factialHours(f: <#T##Int#>)
         case 8:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
@@ -101,6 +104,7 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
+            cell.resultInStringAtColor(f: 15, p: 15)
         case 13:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
@@ -108,6 +112,7 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
+            cell.resultInStringAtColor(f: 10, p: 30)
         case 14:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
