@@ -7,6 +7,8 @@
 
 import Foundation
 
+//TODO: заполнени модели 6 семестра из task
+
 class Task {
     
     let urlString = ""

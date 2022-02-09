@@ -4,10 +4,13 @@
 //
 //  Created by Даниил Франк on 09.02.2022.
 //
+//TODO: Сделать настройку интерфейса для кнопок и закраску бара сверху
+//TODO: Методы отображения данных по нажатию на кнопку
 
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
+
     
     let mainScreen = LessonViewController()
     
@@ -16,9 +19,6 @@ class CollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var labelForTextInCell: UILabel!
     
     @IBAction func semestr5(_ sender: UIButton) {
-        
-        
-        
         
         let lectioElctrochemistry = Tearm(nameOfTheDiscipline: Classes.electrochemistry,
                       academycHours: [TimeForClasses.electrochemistry_F: 10,

@@ -5,7 +5,13 @@
 //  Created by Даниил Франк on 08.02.2022.
 //
 
+//TODO: Сделать единный массив с данными модели
+//TODO: Вынести загрузку локальной модели данных в viewControlle через segue
+//TODO: Рефакторинг названий
+//TODO: Заглушку для скачивания файла через alert
+
 import UIKit
+
 
 class LessonViewController: UIViewController {
     
