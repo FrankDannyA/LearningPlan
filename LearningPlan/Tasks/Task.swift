@@ -64,26 +64,52 @@ class Task {
         }.resume()
     }
     
-    func createMainScrean(){
-        guard let dawnloadURL = dawnloadURL else { return }
-        guard let learningYear = learningYear else { return }
-        guard let learningTearm = learningTearm else { return }
-        guard let nameDiscipline = nameDiscipline else { return }
-        guard let hoursF = hoursF else { return }
-        guard let hoursR = hoursR else { return }
+    func createMainScrean() -> ModelTearm?{
+        guard let dawnloadURL = dawnloadURL else { return nil}
+        guard let learningYear = learningYear else { return nil}
+        guard let learningTearm = learningTearm else { return nil}
+        guard let nameDiscipline = nameDiscipline else { return nil}
+        guard let hoursF = hoursF else { return nil}
+        guard let hoursR = hoursR else { return nil}
         
+        let sequenseFact = transfrormHoursToInt(hoursF)
+        let sequenseReal = transfrormHoursToInt(hoursR)
         
-        
-        
+        //Ужасно, но нет времени переписать модель
         let leraningPlan = ModelTearm(
             learningYear: learningYear,
             learningTearm: learningTearm,
             nameOfDiscipline: nameDiscipline,
-            academycHoursLectio: <#T##[TimeForClasses : Int]#>,
-            academycHoursSeminar: <#T##[TimeForClasses : Int]#>,
-            academycHoursLab: <#T##[TimeForClasses : Int]#>,
+            academycHoursLectio: [TimeForClasses.electrochemistry_F: sequenseFact[0],
+                                  TimeForClasses.languageC1_F: sequenseFact[1],
+                                  TimeForClasses.fundamentalsOfChemicalAnalysis_F: sequenseFact[2],
+                                  TimeForClasses.electrochemistry_P : sequenseReal[0],
+                                  TimeForClasses.languageC1_P : sequenseReal[1],
+                                  TimeForClasses.fundamentalsOfChemicalAnalysis_P: sequenseFact[2]
+                                 ],
+            academycHoursSeminar: [TimeForClasses.electrochemistry_F: sequenseFact[3],
+                                   TimeForClasses.languageC1_F: sequenseFact[4],
+                                   TimeForClasses.fundamentalsOfChemicalAnalysis_F: sequenseFact[5],
+                                   TimeForClasses.electrochemistry_P : sequenseReal[3],
+                                   TimeForClasses.languageC1_P : sequenseReal[3],
+                                   TimeForClasses.fundamentalsOfChemicalAnalysis_P: sequenseFact[4]
+                                   ],
+            academycHoursLab: [TimeForClasses.electrochemistry_F: sequenseFact[6],
+                                   TimeForClasses.languageC1_F: sequenseFact[7],
+                                   TimeForClasses.fundamentalsOfChemicalAnalysis_F: sequenseFact[8],
+                                   TimeForClasses.electrochemistry_P : sequenseReal[6],
+                                   TimeForClasses.languageC1_P : sequenseReal[7],
+                                   TimeForClasses.fundamentalsOfChemicalAnalysis_P: sequenseFact[8]
+                               ],
             urlForDownLoad: dawnloadURL)
-
-
+        return leraningPlan
     }
+
+    private func transfrormHoursToInt(_ hours: [String]) -> [Int]{
+        var intHours: [Int] = []
+        for hour in hours { intHours.append(Int(hour) ?? 0) }
+        return intHours
+    }
+    
 }
+

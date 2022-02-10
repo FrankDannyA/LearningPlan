@@ -14,6 +14,9 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "goToPersonalLerningPlan", sender: nil)
     }
     
+    @IBAction func json() {
+        performSegue(withIdentifier: "goToParse", sender: nil)
+    }
     func modelForDestination() -> ModelTearm {
         let destinationModel = ModelTearm(learningYear: "2022 - 2023 Уч год",
                                           learningTearm: ["5"," 6"],
@@ -42,11 +45,18 @@ class ViewController: UIViewController {
         return destinationModel
     }
     
+    
     //MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "goToPersonalLerningPlan" else { return }
+        if segue.identifier == "goToPersonalLerningPlan"{
         let mainVC = segue.destination as! LessonViewController
         mainVC.tearmModel = modelForDestination()
+        } else if segue.identifier == "goToParse" {
+            let mainVC = segue.destination as! LessonViewController
+            task.task(urlString: "")
+            guard let tearmModel = task.createMainScrean() else { return }
+            mainVC.tearmModel = tearmModel
+        }
     }
 }
 
