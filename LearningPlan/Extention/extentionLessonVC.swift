@@ -40,19 +40,19 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                            textAlignment: .left)
         case 3:
             cell.textInCellStackView.isHidden = false
-            cell.configure(text: lectioTearm[0].nameOfTheDiscipline.rawValue,
+            cell.configure(text: tearmModel?.nameOfDiscipline[0].rawValue ?? "",
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .left)
         case 4:
             cell.textInCellStackView.isHidden = false
-            cell.configure(text: lectioTearm[1].nameOfTheDiscipline.rawValue,
+            cell.configure(text: tearmModel?.nameOfDiscipline[1].rawValue ?? "",
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .left)
         case 5:
             cell.textInCellStackView.isHidden = false
-            cell.configure(text: lectioTearm[2].nameOfTheDiscipline.rawValue,
+            cell.configure(text: tearmModel?.nameOfDiscipline[2].rawValue ?? "",
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .left)
@@ -70,8 +70,8 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
-            cell.resultInStringAtColor(f: lectioTearm[0].academycHours[TimeForClasses.electrochemistry_F] ?? 0,
-                                       p: lectioTearm[0].academycHours[TimeForClasses.electrochemistry_P] ?? 0)
+            cell.resultInStringAtColor(f: tearmModel?.academycHoursLectio[TimeForClasses.electrochemistry_F] ?? 0,
+                                       p: tearmModel?.academycHoursLectio[TimeForClasses.electrochemistry_P] ?? 0)
         case 8:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
@@ -79,8 +79,8 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
-            cell.resultInStringAtColor(f: lectioTearm[1].academycHours[TimeForClasses.languageC1_F] ?? 0,
-                                       p: lectioTearm[1].academycHours[TimeForClasses.languageC1_P] ?? 0)
+            cell.resultInStringAtColor(f: tearmModel?.academycHoursLectio[TimeForClasses.languageC1_F] ?? 0,
+                                       p: tearmModel?.academycHoursLectio[TimeForClasses.languageC1_P] ?? 0)
         case 9:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
@@ -88,8 +88,8 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
-            cell.resultInStringAtColor(f: lectioTearm[2].academycHours[TimeForClasses.fundamentalsOfChemicalAnalysis_F] ?? 0,
-                                       p: lectioTearm[2].academycHours[TimeForClasses.fundamentalsOfChemicalAnalysis_P] ?? 0)
+            cell.resultInStringAtColor(f: tearmModel?.academycHoursLectio[TimeForClasses.fundamentalsOfChemicalAnalysis_F] ?? 0,
+                                       p: tearmModel?.academycHoursLectio[TimeForClasses.fundamentalsOfChemicalAnalysis_P] ?? 0)
         case 10:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
@@ -104,8 +104,8 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
-            cell.resultInStringAtColor(f: seminarTearm[0].academycHours[TimeForClasses.electrochemistry_F] ?? 0,
-                                       p: seminarTearm[0].academycHours[TimeForClasses.electrochemistry_P] ?? 0)
+            cell.resultInStringAtColor(f: tearmModel?.academycHoursSeminar[TimeForClasses.electrochemistry_F] ?? 0,
+                                       p: tearmModel?.academycHoursSeminar[TimeForClasses.electrochemistry_P] ?? 0)
         case 12:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
@@ -113,8 +113,8 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
-            cell.resultInStringAtColor(f: seminarTearm[1].academycHours[TimeForClasses.languageC1_F] ?? 0,
-                                       p: seminarTearm[1].academycHours[TimeForClasses.languageC1_P] ?? 0)
+            cell.resultInStringAtColor(f: tearmModel?.academycHoursSeminar[TimeForClasses.languageC1_F] ?? 0,
+                                       p: tearmModel?.academycHoursSeminar[TimeForClasses.languageC1_P] ?? 0)
         case 13:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
@@ -122,8 +122,8 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
-            cell.resultInStringAtColor(f: seminarTearm[2].academycHours[TimeForClasses.fundamentalsOfChemicalAnalysis_F] ?? 0,
-                                       p: seminarTearm[2].academycHours[TimeForClasses.fundamentalsOfChemicalAnalysis_P] ?? 0)
+            cell.resultInStringAtColor(f: tearmModel?.academycHoursSeminar[TimeForClasses.fundamentalsOfChemicalAnalysis_F] ?? 0,
+                                       p: tearmModel?.academycHoursSeminar[TimeForClasses.fundamentalsOfChemicalAnalysis_P] ?? 0)
         case 14:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
@@ -138,8 +138,8 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
-            cell.resultInStringAtColor(f: labTearm[0].academycHours[TimeForClasses.electrochemistry_F] ?? 0,
-                                       p: labTearm[0].academycHours[TimeForClasses.electrochemistry_P] ?? 0)
+            cell.resultInStringAtColor(f: tearmModel?.academycHoursLab[TimeForClasses.electrochemistry_F] ?? 0,
+                                       p: tearmModel?.academycHoursLab[TimeForClasses.electrochemistry_P] ?? 0)
         case 16:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
@@ -147,8 +147,8 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
-            cell.resultInStringAtColor(f: labTearm[1].academycHours[TimeForClasses.languageC1_F] ?? 0,
-                                       p: labTearm[1].academycHours[TimeForClasses.languageC1_P] ?? 0)
+            cell.resultInStringAtColor(f: tearmModel?.academycHoursLab[TimeForClasses.languageC1_F] ?? 0,
+                                       p: tearmModel?.academycHoursLab[TimeForClasses.languageC1_P] ?? 0)
         case 17:
             cell.textInCellStackView.isHidden = false
             cell.backgroundColor = .white
@@ -156,11 +156,20 @@ extension LessonViewController: UICollectionViewDelegate, UICollectionViewDataSo
                            size: 15.0,
                            textColor: .black,
                            textAlignment: .center)
-            cell.resultInStringAtColor(f: labTearm[2].academycHours[TimeForClasses.fundamentalsOfChemicalAnalysis_F] ?? 0,
-                                       p: labTearm[2].academycHours[TimeForClasses.fundamentalsOfChemicalAnalysis_P] ?? 0)
+            cell.resultInStringAtColor(f: tearmModel?.academycHoursLab[TimeForClasses.fundamentalsOfChemicalAnalysis_F] ?? 0,
+                                       p: tearmModel?.academycHoursLab[TimeForClasses.fundamentalsOfChemicalAnalysis_P] ?? 0)
         default:
             cell.backgroundColor = .black
         }
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if indexPath.row == 2 {
+            collectionView.reloadData()
+            print("Обновил данные")
+        }
+    }
+    
+    
 }

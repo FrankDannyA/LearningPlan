@@ -15,11 +15,8 @@ import UIKit
 
 class LessonViewController: UIViewController {
     
-    let learningPlan = LearningPlan(learningYear: "2021-2022")
-    
-    var lectioTearm: [Tearm] = []
-    var seminarTearm: [Tearm] = []
-    var labTearm: [Tearm] = []
+    var tearmModel: ModelTearm?
+ 
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var labelForTitleLearningYear: UILabel!
@@ -28,54 +25,8 @@ class LessonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        tearmInit()
         
-        labelForTitleLearningYear.text = "ИНДИВИДУАЛЬНЫЙ УЧЕБНЫЙ ПЛАН НА \(learningPlan.learningYear) УЧ. ГОД"
-    }
-    
-    
-    private func tearmInit(){
-     
-        
-        let lectioElctrochemistry = Tearm(nameOfTheDiscipline: Classes.electrochemistry,
-                      academycHours: [TimeForClasses.electrochemistry_F: 10,
-                                      TimeForClasses.electrochemistry_P: 30])
-        let lectioLanguageC1 = Tearm(nameOfTheDiscipline: Classes.languageC1,
-                                    academycHours: [TimeForClasses.languageC1_F: 30,
-                                                    TimeForClasses.languageC1_P: 30])
-        let lectioFundamentalsOfChemicalAnalysis = Tearm(nameOfTheDiscipline: Classes.fundamentalsOfChemicalAnalysis,
-                                                           academycHours: [TimeForClasses.fundamentalsOfChemicalAnalysis_F : 10,
-                                                                           TimeForClasses.fundamentalsOfChemicalAnalysis_P : 30])
-        lectioTearm.append(lectioElctrochemistry)
-        lectioTearm.append(lectioLanguageC1)
-        lectioTearm.append(lectioFundamentalsOfChemicalAnalysis)
-        
-        let seminarElctrochemistry = Tearm(nameOfTheDiscipline: Classes.electrochemistry,
-                            academycHours: [TimeForClasses.electrochemistry_F: 5,
-                                            TimeForClasses.electrochemistry_P: 15])
-        let seminarLanguageC1 = Tearm(nameOfTheDiscipline: Classes.languageC1,
-                                      academycHours: [TimeForClasses.languageC1_F: 15,
-                                                      TimeForClasses.languageC1_P: 15])
-        let seminarFundamentalsOfChemicalAnalysis = Tearm(nameOfTheDiscipline: Classes.fundamentalsOfChemicalAnalysis,
-                                                          academycHours: [TimeForClasses.fundamentalsOfChemicalAnalysis_F : 0,
-                                                                          TimeForClasses.fundamentalsOfChemicalAnalysis_P : 0])
-        seminarTearm.append(seminarElctrochemistry)
-        seminarTearm.append(seminarLanguageC1)
-        seminarTearm.append(seminarFundamentalsOfChemicalAnalysis)
-        
-        
-        let labElctrochemistry = Tearm(nameOfTheDiscipline: Classes.electrochemistry,
-                                       academycHours: [TimeForClasses.electrochemistry_F: 10,
-                                                       TimeForClasses.electrochemistry_P: 30])
-        let labLanguageC1 = Tearm(nameOfTheDiscipline: Classes.languageC1,
-                                  academycHours: [TimeForClasses.languageC1_F: 10,
-                                                  TimeForClasses.languageC1_P: 30])
-        let labFundamentalsOfChemicalAnalysis = Tearm(nameOfTheDiscipline: Classes.fundamentalsOfChemicalAnalysis,
-                                                      academycHours: [TimeForClasses.fundamentalsOfChemicalAnalysis_F : 10,
-                                                                      TimeForClasses.fundamentalsOfChemicalAnalysis_P : 30])
-        labTearm.append(labElctrochemistry)
-        labTearm.append(labLanguageC1)
-        labTearm.append(labFundamentalsOfChemicalAnalysis)
+        labelForTitleLearningYear.text = "ИНДИВИДУАЛЬНЫЙ УЧЕБНЫЙ ПЛАН НА \(tearmModel?.learningYear)"
     }
     
     
