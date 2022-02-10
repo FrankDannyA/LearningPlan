@@ -8,11 +8,11 @@
 import Foundation
 
 
-enum Classes: String {
-    case electrochemistry = "Электрохимия \n(на англ. яз)"
-    case languageC1 = "Иностранный язык С1"
-    case fundamentalsOfChemicalAnalysis = "Основы химического анализа"
-}
+//enum Classes: String {
+//    case electrochemistry = "Электрохимия \n(на англ. яз)"
+//    case languageC1 = "Иностранный язык С1"
+//    case fundamentalsOfChemicalAnalysis = "Основы химического анализа"
+//}
 
 enum TimeForClasses: Hashable{
     case electrochemistry_F
@@ -24,9 +24,12 @@ enum TimeForClasses: Hashable{
 }
 
 struct ModelTearm {
+    var urlForDownload: String?
     var learningYear: String
-    var nameOfDiscipline: [Classes]
+    var learningTearm: [String]
+    var nameOfDiscipline: [String]
     var academycHoursLectio: [TimeForClasses: Int]
     var academycHoursSeminar: [TimeForClasses: Int]
     var academycHoursLab: [TimeForClasses: Int]
+    var urlForDownLoad: String?
 }

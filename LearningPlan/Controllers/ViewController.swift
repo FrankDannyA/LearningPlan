@@ -8,15 +8,18 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let task = Task()
+    
     @IBAction func lookAtPlan() {
         performSegue(withIdentifier: "goToPersonalLerningPlan", sender: nil)
     }
     
     func modelForDestination() -> ModelTearm {
         let destinationModel = ModelTearm(learningYear: "2022 - 2023 Уч год",
-                                          nameOfDiscipline: [Classes.electrochemistry,
-                                                             Classes.languageC1,
-                                                             Classes.fundamentalsOfChemicalAnalysis],
+                                          learningTearm: ["5"," 6"],
+                                          nameOfDiscipline: ["Электрохимия \n(на англ. яз)",
+                                                             "Иностранный язык С1",
+                                                             "Основы химического анализа"],
                                           academycHoursLectio: [TimeForClasses.electrochemistry_F: 10,
                                                                 TimeForClasses.electrochemistry_P: 30,
                                                                 TimeForClasses.languageC1_F: 30,
@@ -36,7 +39,6 @@ class ViewController: UIViewController {
                                                          TimeForClasses.fundamentalsOfChemicalAnalysis_F : 10,
                                                          TimeForClasses.fundamentalsOfChemicalAnalysis_P : 30
                                           ])
-        
         return destinationModel
     }
     

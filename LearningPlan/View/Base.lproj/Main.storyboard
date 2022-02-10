@@ -102,31 +102,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="13K-lf-rv6">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xeg-iG-1vH">
-                                                            <rect key="frame" x="0.0" y="0.0" width="160" height="67"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" title="Семестр 5">
-                                                                <color key="baseForegroundColor" systemColor="labelColor"/>
-                                                            </buttonConfiguration>
-                                                            <connections>
-                                                                <action selector="semestr5:" destination="9t4-bK-taj" eventType="touchUpInside" id="yO6-OJ-i0l"/>
-                                                            </connections>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ou-yU-U7w">
-                                                            <rect key="frame" x="160" y="0.0" width="160" height="67"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <buttonConfiguration key="configuration" style="plain" title="Семестр 6">
-                                                                <color key="baseForegroundColor" systemColor="opaqueSeparatorColor"/>
-                                                            </buttonConfiguration>
-                                                            <connections>
-                                                                <action selector="semestr6:" destination="txb-li-FKh" eventType="touchUpInside" id="ocJ-qG-Y40"/>
-                                                            </connections>
-                                                        </button>
-                                                    </subviews>
-                                                </stackView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jjd-hD-182">
                                                     <rect key="frame" x="0.0" y="0.0" width="310" height="67"/>
                                                     <subviews>
@@ -139,20 +114,15 @@
                                                 </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="13K-lf-rv6" firstAttribute="leading" secondItem="gCr-xe-IwU" secondAttribute="leading" id="EuS-hZ-JZ0"/>
-                                                <constraint firstAttribute="trailing" secondItem="13K-lf-rv6" secondAttribute="trailing" id="NHk-Fw-YlC"/>
                                                 <constraint firstAttribute="trailing" secondItem="Jjd-hD-182" secondAttribute="trailing" constant="10" id="QR0-WO-gAo"/>
                                                 <constraint firstAttribute="bottom" secondItem="Jjd-hD-182" secondAttribute="bottom" id="hcW-er-ogL"/>
-                                                <constraint firstAttribute="bottom" secondItem="13K-lf-rv6" secondAttribute="bottom" id="imo-pG-Flz"/>
                                                 <constraint firstItem="Jjd-hD-182" firstAttribute="leading" secondItem="gCr-xe-IwU" secondAttribute="leading" id="qk0-Xu-vBO"/>
-                                                <constraint firstItem="13K-lf-rv6" firstAttribute="top" secondItem="gCr-xe-IwU" secondAttribute="top" id="rKM-Tg-nVU"/>
                                                 <constraint firstItem="Jjd-hD-182" firstAttribute="top" secondItem="gCr-xe-IwU" secondAttribute="top" id="rYK-pm-OaM"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="320" height="67"/>
                                         <connections>
                                             <outlet property="labelForTextInCell" destination="uii-Aw-UbH" id="KwH-MX-aqj"/>
-                                            <outlet property="termStackView" destination="13K-lf-rv6" id="fNA-6O-46R"/>
                                             <outlet property="textInCellStackView" destination="Jjd-hD-182" id="mth-Wh-hdH"/>
                                         </connections>
                                     </collectionViewCell>
@@ -174,6 +144,9 @@
                     <navigationItem key="navigationItem" title="Индивидуальный учебный план" id="krf-s5-ib4">
                         <barButtonItem key="rightBarButtonItem" image="doc" catalog="system" id="c3T-mF-HQc">
                             <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
+                            <connections>
+                                <action selector="downloadPDF:" destination="lQ4-bf-bRR" id="azE-N4-fH0"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -182,7 +155,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smd-pu-cTW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="txb-li-FKh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1728.75" y="97.183098591549296"/>
         </scene>

@@ -11,59 +11,8 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
 
-    
-    let mainScreen = LessonViewController()
-    
-    @IBOutlet weak var termStackView: UIStackView!
     @IBOutlet weak var textInCellStackView: UIStackView!
     @IBOutlet weak var labelForTextInCell: UILabel!
-    
-    @IBAction func semestr5(_ sender: UIButton) {
-        
-        let lectioElctrochemistry = Tearm(nameOfTheDiscipline: Classes.electrochemistry,
-                      academycHours: [TimeForClasses.electrochemistry_F: 10,
-                                      TimeForClasses.electrochemistry_P: 30])
-        let lectioLanguageC1 = Tearm(nameOfTheDiscipline: Classes.languageC1,
-                                    academycHours: [TimeForClasses.languageC1_F: 30,
-                                                    TimeForClasses.languageC1_P: 30])
-        let lectioFundamentalsOfChemicalAnalysis = Tearm(nameOfTheDiscipline: Classes.fundamentalsOfChemicalAnalysis,
-                                                           academycHours: [TimeForClasses.fundamentalsOfChemicalAnalysis_F : 10,
-                                                                           TimeForClasses.fundamentalsOfChemicalAnalysis_P : 30])
-        mainScreen.lectioTearm.append(lectioElctrochemistry)
-        mainScreen.lectioTearm.append(lectioLanguageC1)
-        mainScreen.lectioTearm.append(lectioFundamentalsOfChemicalAnalysis)
-        
-        let seminarElctrochemistry = Tearm(nameOfTheDiscipline: Classes.electrochemistry,
-                            academycHours: [TimeForClasses.electrochemistry_F: 5,
-                                            TimeForClasses.electrochemistry_P: 15])
-        let seminarLanguageC1 = Tearm(nameOfTheDiscipline: Classes.languageC1,
-                                      academycHours: [TimeForClasses.languageC1_F: 15,
-                                                      TimeForClasses.languageC1_P: 15])
-        let seminarFundamentalsOfChemicalAnalysis = Tearm(nameOfTheDiscipline: Classes.fundamentalsOfChemicalAnalysis,
-                                                          academycHours: [TimeForClasses.fundamentalsOfChemicalAnalysis_F : 0,
-                                                                          TimeForClasses.fundamentalsOfChemicalAnalysis_P : 0])
-        mainScreen.seminarTearm.append(seminarElctrochemistry)
-        mainScreen.seminarTearm.append(seminarLanguageC1)
-        mainScreen.seminarTearm.append(seminarFundamentalsOfChemicalAnalysis)
-        
-        let labElctrochemistry = Tearm(nameOfTheDiscipline: Classes.electrochemistry,
-                                       academycHours: [TimeForClasses.electrochemistry_F: 10,
-                                                       TimeForClasses.electrochemistry_P: 30])
-        let labLanguageC1 = Tearm(nameOfTheDiscipline: Classes.languageC1,
-                                  academycHours: [TimeForClasses.languageC1_F: 10,
-                                                  TimeForClasses.languageC1_P: 30])
-        let labFundamentalsOfChemicalAnalysis = Tearm(nameOfTheDiscipline: Classes.fundamentalsOfChemicalAnalysis,
-                                                      academycHours: [TimeForClasses.fundamentalsOfChemicalAnalysis_F : 10,
-                                                                      TimeForClasses.fundamentalsOfChemicalAnalysis_P : 30])
-        mainScreen.labTearm.append(labElctrochemistry)
-        mainScreen.labTearm.append(labLanguageC1)
-        mainScreen.labTearm.append(labFundamentalsOfChemicalAnalysis)
-    }
-    
-    @IBAction func semestr6(_ sender: UIButton) {
- 
-    }
-  
     
     func configure(text: String, size: CGFloat, textColor: UIColor, textAlignment: NSTextAlignment){
         labelForTextInCell.text = text
@@ -90,4 +39,5 @@ class CollectionViewCell: UICollectionViewCell {
             labelForTextInCell.attributedText = string
         }
     }
+    
 }

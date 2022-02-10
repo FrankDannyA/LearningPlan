@@ -8,7 +8,10 @@
 import Foundation
 
 struct ModelJSON: Decodable {
-    let iupSid, title, documentURL, academicYearID: String
+    let iupSid: String?
+    let title: String
+    let documentURL: String
+    let academicYearID: String?
     let academicYear: String
     let semesters: [Semester]
     
@@ -35,7 +38,7 @@ struct Semester: Decodable {
 
 // MARK: - Discipline
 struct Discipline: Decodable {
-    let disciplineID: String
+    let disciplineID: String?
     let disciplineName: DisciplineName
     let lesson: [Lesson]
     
@@ -48,12 +51,16 @@ struct Discipline: Decodable {
 
 // MARK: - DisciplineName
 struct DisciplineName: Decodable {
-    let nameKk, nameRu, nameEn: String
+    let nameKk: String?
+    let nameRu: String
+    let nameEn: String?
 }
 
 // MARK: - Lesson
 struct Lesson: Decodable {
-    let lessonTypeID, hours, realHours: String
+    let lessonTypeID: String?
+    let hours: String
+    let realHours: String
     
     enum CodingKeys: String, CodingKey {
         case lessonTypeID = "LessonTypeId"
