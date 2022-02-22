@@ -10,34 +10,39 @@ import UIKit
 
 class LessonViewController: UIViewController {
     
+    //MARK: - Properties
     var tearmModel: ModelTearm?
     var selectTearm = 0
- 
+    
+    //MARK: - IB Outlets
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var labelForTitleLearningYear: UILabel!
 
+    //MARK: - IB Actions
     @IBAction func downloadPDF(_ sender: Any) {
         if tearmModel?.urlForDownLoad == nil || tearmModel?.urlForDownLoad == "" {
             showAletr(title: "Ошибка",
                       message: "В данный момент загрузка невозможна, пожалуйста попробуйте позже" )
-        } else {
-            downloadPDF()
-        }
+        } else { downloadPDF() }
     }
     
+    //MARK: - Life cicle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupCollectionView()
-        
         labelForTitleLearningYear.text = "ИНДИВИДУАЛЬНЫЙ УЧЕБНЫЙ ПЛАН НА \(tearmModel?.learningYear ?? "")"
+        
+        setupCollectionView()
     }
     
+    //MARK: - Private funcs
+    //Настраиваю внешний вид коллекции
     private func setupCollectionView(){
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.collectionViewLayout = createLayout()
     }
     
+    //Алёрт
     private func showAletr( title: String, message: String?){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let aletAction = UIAlertAction(title: "OK", style: .default)
@@ -45,6 +50,7 @@ class LessonViewController: UIViewController {
         present(alert, animated: true)
     }
     
+    //Иммитация скачивания
     private func downloadPDF(){
         collectionView.reloadData()
         guard let url = URL(string: (tearmModel?.urlForDownLoad)!) else { return }
@@ -52,7 +58,8 @@ class LessonViewController: UIViewController {
         let downloadTask = urlSession.downloadTask(with: url)
         downloadTask.resume()
     }
-
+    
+    //Настраиваю внешний вид коллекции
     private func createLayout() -> UICollectionViewLayout{
         let layout = UICollectionViewCompositionalLayout{
         (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
@@ -90,8 +97,7 @@ class LessonViewController: UIViewController {
         let firstNamesGroup = NSCollectionLayoutGroup.vertical(layoutSize: NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.4),
             heightDimension: .fractionalHeight(1.0)), subitems: [firstItemForNaming, firstGroupWidhNaming])
-        
-        //Нижняя вторая группа с лекциями
+    
         let secondItemForLecture = NSCollectionLayoutItem(layoutSize: NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(0.20)))
@@ -127,6 +133,7 @@ class LessonViewController: UIViewController {
     return layout
 }
     
+    //Имитирую подгузку с json
     func forImitationDataDownload(type: Int) -> ModelTearm{
         if type == 1{
             let destinationModel = ModelTearm(learningYear: "2022 - 2023 Уч год",

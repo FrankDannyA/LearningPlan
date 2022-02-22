@@ -11,6 +11,7 @@ import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
 
+    //MARK: - Properties
     @IBOutlet weak var textInCellStackView: UIStackView!
     @IBOutlet weak var labelForTextInCell: UILabel!
     
@@ -21,7 +22,7 @@ class CollectionViewCell: UICollectionViewCell {
         labelForTextInCell.textColor = textColor
     }
     
-    
+    //MARK: - Funcs
     func resultInStringAtColor(f value1: Int, p value2: Int) {
         let value1AtString = String(value1)
         let value2AtString = String(value2)
